@@ -1,0 +1,24 @@
+clientProd:
+  BUCKETNAME: ${env:SLS_CONFIG_SERVICE_NAME}-client-prod
+  DISTRIBUTIONFOLDER: ${env:SLS_CONFIG_SERVICE_NAME}-front-client
+  ERRORDOCUMENT: index.html
+adminProd:
+  BUCKETNAME: ${env:SLS_CONFIG_SERVICE_NAME}-admin-prod
+  DISTRIBUTIONFOLDER: ${env:SLS_CONFIG_SERVICE_NAME}-front-admin
+  ERRORDOCUMENT: index.html
+clientDev:
+  BUCKETNAME: ${env:SLS_CONFIG_SERVICE_NAME}-client-dev
+  DISTRIBUTIONFOLDER: ${env:SLS_CONFIG_SERVICE_NAME}-front-client
+  ERRORDOCUMENT: index.html
+adminDev:
+  BUCKETNAME: ${env:SLS_CONFIG_SERVICE_NAME}-admin-dev
+  DISTRIBUTIONFOLDER: ${env:SLS_CONFIG_SERVICE_NAME}-front-admin
+  ERRORDOCUMENT: index.html
+clientQa:
+  BUCKETNAME: ${env:SLS_CONFIG_SERVICE_NAME}-client-qa
+  DISTRIBUTIONFOLDER: ${env:SLS_CONFIG_SERVICE_NAME}-front-client
+  ERRORDOCUMENT: index.html
+adminQa:
+  BUCKETNAME: ${env:SLS_CONFIG_SERVICE_NAME}-admin-qa
+  DISTRIBUTIONFOLDER: ${env:SLS_CONFIG_SERVICE_NAME}-front-admin
+  ERRORDOCUMENT: index.html

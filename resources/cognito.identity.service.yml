@@ -1,0 +1,26 @@
+Resources:
+  CognitoIdentityPool:
+    Type: AWS::Cognito::IdentityPool
+    Properties:
+      # Generate a name based on the stage
+      IdentityPoolName: ${self:service}-${self:provider.stage}-ExtIdentityPool
+      # Don't allow unathenticated users
+      AllowUnauthenticatedIdentities: false
+      # Link to our User Pool
+      CognitoIdentityProviders:
+        - ClientId:
+            Ref: CognitoUserPoolClient
+          ProviderName:
+            Fn::GetAtt: ["CognitoUserPool", "ProviderName"]
+    # IAM roles
+  CognitoIdentityPoolRoles:
+    Type: AWS::Cognito::IdentityPoolRoleAttachment
+    Properties:
+      IdentityPoolId:
+        Ref: CognitoIdentityPool
+      Roles:
+        authenticated:
+          Fn::GetAtt: [CognitoAuthRole, Arn]
+        unauthenticated:
+          Fn::GetAtt: [CognitoUnauthRole, Arn]
+  # IAM role used for authenticated users
